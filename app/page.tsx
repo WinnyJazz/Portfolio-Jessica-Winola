@@ -1,65 +1,131 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <div className="bg-animation">
+        <div className="glow-orb orb1"></div>
+        <div className="glow-orb orb2"></div>
+        <div className="glow-orb orb3"></div>
+      </div>
+
+      <nav>
+        <div className="logo">Jessica's Portfolio</div>
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+
+      <section className="profile-section" id="home">
+        <div className="profile-container">
+          <div className="profile-image">
+            <div className="image-wrapper">
+              <div className="glow-border"></div>
+              <div className="profile-pic">
+                <img
+                  src="/jess.jpg"
+                  alt="Jessica Winola"
+                  className="profile-photo"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="profile-content">
+            <h1>Hi, I'm Jessica Winola</h1>
+            <div className="subtitle">Informatics Engineering Student</div>
+            <p>
+              Passionate developer crafting beautiful, functional, and intelligent web experiences.
+              With a strong interest in UI/UX design and AI innovation, I strive to create solutions that 
+              combine creativity with real-world impact.
+            </p>
+
+            <div className="social-links">
+              <a
+                href="https://www.linkedin.com/in/jessica-winola-07073b356/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+              >
+                in
+              </a>
+
+              <a
+                href="https://github.com/WinnyJazz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+              >
+                💻
+              </a>
+
+              <a
+                href="mailto:jessica.535240026@stu.untar.ac.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn"
+              >
+                📧
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="skills-section" id="skills">
+        <div className="skills-container">
+          <h2 className="skills-title">My Skills</h2>
+          <p className="skills-desc">
+            These are some of the technologies and tools I’m passionate about mastering
+            and using to build creative digital experiences.
           </p>
+
+          <div className="skills-grid">
+            <span className="skill-tag">Next.js</span>
+            <span className="skill-tag">TypeScript</span>
+            <span className="skill-tag">Node.js</span>
+            <span className="skill-tag">Tailwind CSS</span>
+            <span className="skill-tag">UI/UX Design</span>
+            <span className="skill-tag">Python</span>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* === Projects Section (sudah dibenahi) === */}
+      <section className="projects-section" id="projects">
+        <div className="projects-container">
+          <h2 className="projects-title">My Projects</h2>
+          <p className="projects-desc">
+            Here are some of my recent works that showcase my skills and creativity.
+          </p>
+
+          <div className="projects-grid">
+            <div className="project-card">
+              <img src="/project1.jpg" alt="TradisiHariIni" className="project-image" />
+              <div className="project-info">
+                <h3>TradisiHariIni Website</h3>
+                <p>Website to explain and show Indonesian Cultures</p>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <img src="/project2.jpg" alt="Poster" className="project-image" />
+              <div className="project-info">
+                <h3>Poster</h3>
+                <p>A simple poster made by me</p>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <img src="/project3.jpg" alt="Lintar" className="project-image" />
+              <div className="project-info">
+                <h3>Lintar's Update</h3>
+                <p>Recreating Lintar webpage</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
