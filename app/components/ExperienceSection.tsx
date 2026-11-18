@@ -54,7 +54,22 @@ const workExperiences = [
   },
 ];
 
-function ExperienceList({ experiences, showPlace = true }) {
+interface Experience {
+  period: string;
+  role: string;
+  place: string;
+  points: string[];
+}
+
+interface ExperienceListProps {
+  experiences: Experience[];
+  showPlace?: boolean;
+}
+
+function ExperienceList({
+  experiences,
+  showPlace = true,
+}: ExperienceListProps) {
   return (
     <div className="experience-list">
       {experiences.map((exp) => (
@@ -108,4 +123,4 @@ export default function ExperienceSection() {
       </div>
     </section>
   );
-}                                   
+}
