@@ -1,18 +1,7 @@
-
 export default function HomeSection() {
   return (
     <section className="profile-section" id="home">
       <div className="profile-container">
-        {/* Decorative image on the left */}
-        <div className="home-side-image">
-          <img
-            src="/home.png"
-            alt=""
-            aria-hidden="true"
-            className="home-element"
-          />
-        </div>
-
         {/* Profile photo */}
         <div className="profile-image">
           <div className="image-wrapper">
@@ -36,13 +25,15 @@ export default function HomeSection() {
             Informatics Engineering Student
           </div>
 
-          <p>
-            I&apos;m Jessica Winola, an Informatics Engineering student
-            at Tarumanagara University, passionate about creating
-            meaningful digital experiences. I enjoy bringing ideas to
-            life through interactive web applications, exploring new
-            technologies, and blending creativity with technology.
-          </p>
+          <div className="home-desc">
+            <p>
+              I&apos;m Jessica Winola,an Informatics Engineering student at Tarumanagara University
+               passionate about software development, full-stack web development, and data science. 
+               I enjoy building web applications, exploring new technologies, and applying data-driven 
+               approaches to real-world problems. With a growth-oriented mindset, I value continuous learning, 
+               adaptability, and self-improvement.
+            </p>
+          </div>
 
           <a
             href="https://github.com/WinnyJazz"

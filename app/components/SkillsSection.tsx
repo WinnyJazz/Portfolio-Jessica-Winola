@@ -1,31 +1,51 @@
 const skillCategories = [
   {
-    title: "Languages",
-    icons: "html,css,js,ts,java,python,cpp",
+    title: "Programming Languages",
+    icons: [
+      { name: "HTML", image: "/Skills/html.png" },
+      { name: "CSS", image: "/Skills/css.png" },
+      { name: "JavaScript", image: "/Skills/js.png" },
+      { name: "TypeScript", image: "/Skills/ts.png" },
+      { name: "Java", image: "/Skills/java.png" },
+      { name: "Python", image: "/Skills/python.png" },
+      { name: "C++", image: "/Skills/c++.png" },
+      { name: "PHP", image: "/Skills/php.png" },
+    ],
+  },
+  {
+    title: "Databases",
+    icons: [
+      { name: "PostgreSQL", image: "/Skills/postgresql.png" },
+      { name: "MySQL", image: "/Skills/mysql.png" },
+      { name: "Mongodb", image: "/Skills/mongodb.png" },
+    ],
   },
   {
     title: "Frameworks & Libraries",
-    icons: "react,nextjs,nodejs,tailwind",
-  },
-  {
-    title: "Database",
-    icons: "mongodb,mysql",
-  },
-  {
-    title: "Tools",
-    icons: "git,github,vscode,figma,vercel,notion",
+    icons: [
+      { name: "Express.js", image: "/Skills/expressjs.png" },
+      { name: "Node.js", image: "/Skills/nodejs.png" },
+      { name: "Laravel", image: "/Skills/laravel.png" },
+      { name: "React", image: "/Skills/react.png" },
+      { name: "Tailwind CSS", image: "/Skills/tailwind.png" },
+      { name: "Bootstrap", image: "/Skills/bootstrap.png" },
+      { name: "Next.js", image: "/Skills/nextjs.png" },
+      { name: "Flutter", image: "/Skills/flutter.png" },
+    ],
   },
 ];
 
 export default function SkillsSection() {
   return (
-    <section className="skills-section" id="skills">
+    <section className="skills-section">
       <div className="skills-container">
-        <h2 className="skills-title">Tech Stack</h2>
+        <h2 className="skills-title" id="skills">
+          Skills
+        </h2>
 
         <p className="skills-desc">
-          These are some of the technologies and tools I&apos;m passionate
-          about mastering and using to build creative digital experiences.
+          Technologies and tools I use to build applications,
+          develop solutions, and explore new ideas.
         </p>
 
         <div className="skills-categories">
@@ -36,11 +56,15 @@ export default function SkillsSection() {
               </h3>
 
               <div className="skills-icons">
-                <img
-                  src={`https://skillicons.dev/icons?i=${category.icons}`}
-                  alt={`${category.title} icons`}
-                  loading="lazy"
-                />
+                {category.icons.map((icon) => (
+                  <img
+                    key={icon.name}
+                    src={icon.image}
+                    alt={icon.name}
+                    title={icon.name}
+                    loading="lazy"
+                  />
+                ))}
               </div>
             </div>
           ))}

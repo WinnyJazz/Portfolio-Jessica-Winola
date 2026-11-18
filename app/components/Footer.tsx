@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, type FormEvent } from "react";
@@ -85,19 +84,24 @@ export default function Footer() {
       message,
     ].join("\n");
 
-    const mailto = `mailto:jewinn2244@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    const composeUrl = new URL("https://mail.google.com/mail/");
+    composeUrl.search = new URLSearchParams({
+      view: "cm",
+      fs: "1",
+      to: "jessicawinola123@gmail.com",
+      su: subject,
+      body,
+    }).toString();
 
-    setFormStatus("Your email app will open to send your message.");
-    window.location.href = mailto;
+    setFormStatus("Gmail draft opened in a new tab. Review it and click Send.");
+    window.open(composeUrl.toString(), "_blank", "noopener,noreferrer");
   }
 
   return (
-    <footer className="site-footer" id="contact">
+    <footer className="site-footer">
       <div className="footer-inner">
-        <div className="footer-contact-layout">
-          {/* LEFT: CONTACT INFORMATION */}
+        <div className="footer-contact-layout" id="contact">
+          {/* CONTACT INFORMATION */}
           <div className="footer-left">
             <span className="footer-eyebrow">LET&apos;S WORK TOGETHER</span>
 
@@ -109,9 +113,9 @@ export default function Footer() {
             </p>
 
             <div className="footer-contact-details">
-              <a href="mailto:jewinn2244@gmail.com">
+              <a href="mailto:jessicawinola123@gmail.com">
                 <Mail size={22} />
-                <span>jewinn2244@gmail.com</span>
+                <span>jessicawinola123@gmail.com</span>
               </a>
 
               <a
@@ -145,7 +149,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT: CONTACT FORM */}
+          {/* CONTACT FORM */}
           <div className="footer-right">
             <div className="footer-form-heading">
               <h2>Get In Touch</h2>
