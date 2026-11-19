@@ -4,7 +4,7 @@ Hello everyone! 👋 This is my personal portfolio project, built to showcase wh
 
 I learned the foundations for this project in my Front-End Development class during my 3rd semester, and I continued developing it further from there — adding my own sections, styling, and features along the way.
 
-🔗 **Live site:** https://portfolio-jessica-winola-omega.vercel.app
+🔗 **Live site:** https://jessica-winola-portfolio.vercel.app
 
 ## About This Project
 
